@@ -7,3 +7,7 @@ tasks.register('copy', Copy) {
     from(file('srcDir'))
     into(buildDir)
 }
+dependencies {
+    compile 'org.apache.commons:commons-csv:+'
+    testImplementation 'junit:junit:4.12'
+}
