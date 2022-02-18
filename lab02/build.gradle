@@ -1,3 +1,6 @@
+apply plugin : 'java'
+apply plugin : 'application'
+mainClassName = 'lab02.SimpleTest'
 tasks.register('hello') {
     doLast {
         println 'Hello world!'
@@ -7,7 +10,12 @@ tasks.register('copy', Copy) {
     from(file('srcDir'))
     into(buildDir)
 }
-dependencies {
-    compile 'org.apache.commons:commons-csv:+'
-    testImplementation 'junit:junit:4.12'
+repositories{
+    mavenCentral()
 }
+
+dependencies {
+    compile group: 'org.apache.commons', name: 'commons-csv', version: '1.5'
+}
+
+
